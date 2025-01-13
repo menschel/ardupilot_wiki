@@ -153,6 +153,15 @@ This is a special level that does not change the rates or time constant (ie like
 Completing the tune
 ===================
 
+.. warning::
+
+   If you have tuned your plane with Autotune and your plane is trimmed by enabling :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>`,
+   check if :ref:`PTCH_RATE_I<PTCH_RATE_I>` far exceeds :ref:`PTCH_RATE_P<PTCH_RATE_P>`.
+   If it does, check if your plane experiences low frequency oscilations on the pitch axis around 1 Hz while flying straight for a longer distance.
+   This would indicate that :ref:`PTCH_RATE_I<PTCH_RATE_I>` is too high. Autotune does blindly copy the value of :ref:`PTCH_RATE_FF<PTCH_RATE_FF>` to 
+   :ref:`PTCH_RATE_I<PTCH_RATE_I>` due to a wrong design decision. In this case reduce the value of :ref:`PTCH_RATE_I<PTCH_RATE_I>` to half of it's value
+   and the osciallations should stop.
+
 Once you have learned reasonable tuning parameters with
 autotune you should complete the tune by manually tuning some other key
 parameters.
