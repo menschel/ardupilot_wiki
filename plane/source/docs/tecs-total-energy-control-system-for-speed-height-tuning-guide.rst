@@ -184,6 +184,15 @@ increasing the value of :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` in increments of
    should improve your pitch loop tuning first, before adjusting
    :ref:`TECS_PTCH_DAMP<TECS_PTCH_DAMP>` and :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` as described here.
 
+.. note::
+
+   If you have tuned your plane with Autotune and see oscillations on the pitch axis around 1 Hz,
+   check if :ref:`PTCH_RATE_I<PTCH_RATE_I>` far exceeds :ref:`PTCH_RATE_P<PTCH_RATE_P>`.
+   This is an unwanted result of Autotune for Plane and it typically becomes visible if you fly straight for
+   a longer distance. Autotune does blindly copy the value of :ref:`PTCH_RATE_FF<PTCH_RATE_FF>` to 
+   :ref:`PTCH_RATE_I<PTCH_RATE_I>` due to a wrong design decision. In this case reduce the value of
+   :ref:`PTCH_RATE_I<PTCH_RATE_I>` to half of it's value.
+
 If using airspeed sensing, adjust the value of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` so
 that it matches the average amount of throttle required by the
 controller during constant height loiter. If not using airspeed sensing,
